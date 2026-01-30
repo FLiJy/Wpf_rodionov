@@ -1,0 +1,48 @@
+﻿<Page x:Class="pr13.CheckoutPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Background="#FFF0F0F0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Форма ввода -->
+        <StackPanel Margin="20">
+            <TextBlock Text="Оформление заказа" FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
+
+            <TextBlock Text="ФИО:" Margin="0,5"/>
+            <TextBox x:Name="TxtFIO" Padding="5" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Email:" Margin="0,5"/>
+            <TextBox x:Name="TxtEmail" Padding="5" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Адрес доставки:" Margin="0,5"/>
+            <TextBox x:Name="TxtAddress" Padding="5" Height="80" 
+                     TextWrapping="Wrap" AcceptsReturn="True" Margin="0,0,0,20"/>
+
+            <Button Content="Заказать" Click="BtnOrder_Click" 
+                    Padding="15" Background="Green" Foreground="White" FontSize="16"/>
+        </StackPanel>
+
+        <!-- Список товаров итог -->
+        <StackPanel Grid.Column="1" Margin="20">
+            <TextBlock Text="Ваш заказ:" FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
+            <ListView x:Name="LvOrderItems" Height="300">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Товар" Width="150" 
+                            DisplayMemberBinding="{Binding Product.ProductName}"/>
+                        <GridViewColumn Header="Кол-во" Width="60" 
+                            DisplayMemberBinding="{Binding Quantity}"/>
+                        <GridViewColumn Header="Сумма" Width="100" 
+                            DisplayMemberBinding="{Binding TotalPrice, StringFormat={}{0:C}}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <TextBlock x:Name="TbFinalTotal" FontSize="20" FontWeight="Bold" 
+                       HorizontalAlignment="Right" Margin="0,10" Foreground="Green"/>
+        </StackPanel>
+    </Grid>
+</Page>
