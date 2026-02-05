@@ -8,7 +8,7 @@ namespace pr13
 {
     public class Core
     {
-        public static ShopDBEntities Context = new ShopDBEntities();
+        public static PR13_Rodionov Context = new PR13_Rodionov();
 
         // Список для хранения корзины в памяти (не в БД)
         public static System.Collections.Generic.List<CartItem> Cart = new System.Collections.Generic.List<CartItem>();

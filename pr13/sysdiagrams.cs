@@ -12,17 +12,12 @@ namespace pr13
     using System;
     using System.Collections.Generic;
     
-    public partial class OrderItems
+    public partial class sysdiagrams
     {
-        public int Id { get; set; }
-        public int OrderId { get; set; }
-        public int ProductId { get; set; }
-        public string ProductName { get; set; }
-        public decimal Price { get; set; }
-        public int Quantity { get; set; }
-        public decimal TotalPrice { get; set; }
-    
-        public virtual Orders Orders { get; set; }
-        public virtual Products Products { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

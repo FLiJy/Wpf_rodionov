@@ -13,10 +13,10 @@ namespace pr13
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ShopDBEntities : DbContext
+    public partial class PR13_RodionovEntities : DbContext
     {
-        public ShopDBEntities()
-            : base("name=ShopDBEntities")
+        public PR13_RodionovEntities()
+            : base("name=PR13_RodionovEntities")
         {
         }
     
@@ -28,5 +28,6 @@ namespace pr13
         public virtual DbSet<OrderItems> OrderItems { get; set; }
         public virtual DbSet<Orders> Orders { get; set; }
         public virtual DbSet<Products> Products { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

@@ -20,12 +20,12 @@ namespace pr13
             this.OrderItems = new HashSet<OrderItems>();
         }
     
-        public int OrderID { get; set; }
-        public string FIO { get; set; }
+        public int Id { get; set; }
+        public string CustomerName { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }
         public Nullable<System.DateTime> OrderDate { get; set; }
-        public decimal TotalPrice { get; set; }
+        public decimal TotalAmount { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderItems> OrderItems { get; set; }
